@@ -92,7 +92,7 @@ cd ..
 awk '{print "\t"$8}' ./seg1/raw04.txt | tee H1under.txt
 awk '{print "\t"$8}' ./seg2/raw04.txt | tee H1fair.txt 
 awk '{print "\t"$8}' ./seg3/raw04.txt | tee H1over.txt
-paste H1hdr.txt H1under.txt H1fair.txt H1over.txt | tee H1pclcr.txt
+paste H1hdr.txt H1under.txt H1fair.txt H1over.txt | tee H1pclcr.xls
 # Open H1pclcr.txt FILE in EXcel or LibreOffice CALC format
 
 
