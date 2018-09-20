@@ -89,9 +89,9 @@ grep -B1 '^Total' raw02.txt | grep -v 'Total' | grep '^Line' | tee raw03.txt
 cat raw03.txt | awk '$8 = ($7*100)/($5+$7)' | tee raw04.txt
 cd ..
 
-awk '{print "\t"$8}' ./seg1/raw04.txt | tee H1under.txt
-awk '{print "\t"$8}' ./seg2/raw04.txt | tee H1fair.txt 
-awk '{print "\t"$8}' ./seg3/raw04.txt | tee H1over.txt
+awk '{print $8}' ./seg1/raw04.txt | tee H1under.txt
+awk '{print $8}' ./seg2/raw04.txt | tee H1fair.txt 
+awk '{print $8}' ./seg3/raw04.txt | tee H1over.txt
 paste H1hdr.txt H1under.txt H1fair.txt H1over.txt | tee H1pclcr.xls
 # Open H1pclcr.txt FILE in EXcel or LibreOffice CALC format
 
