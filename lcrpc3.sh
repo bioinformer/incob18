@@ -1,6 +1,6 @@
 #!/bin/bash
 # Before running on SEG server
-cat H1vars.fasta | tr -s ' ' '_' | tr -s '-' '_' | tee H1var1.fasta
+cat H1vars.fasta | tr -s ' ' '_' | tr -s '-' '_' | tr -s '/' '_' | tee H1var1.fasta
 grep '^>' H1var1.fasta | sed -e 's/>/> /g' | awk '{print $2}' | awk 'NF{print $0 ".fa"}' | tee H1hdr.txt 
 # Split MULTI fasta into Single FASTA files.
 awk '/^>sp/ {OUT=substr($0,2) ".fa"}; {print >> OUT; close(OUT)}' H1var1.fasta 
